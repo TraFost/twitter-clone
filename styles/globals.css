@@ -1,27 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  nav ul li:hover {
+    @apply bg-gray-200 rounded-full;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .card--whoToFollow {
+    @apply border rounded-xl border-gray-200
+    mt-3 ml-[10rem] justify-self-center col-span-2 row-span-2 pr-4;
+  }
+  .btn--signUp {
+    @apply border rounded-3xl 
+    border-gray-300 w-[95%] py-1;
+  }
+  .btn--signUp:hover {
+    @apply bg-gray-200;
+  }
+}
+
+body main,
+div > h2 {
+  font-family: "Lato", sans-serif;
+}
+
+nav ul li {
+  font-family: "Times New Roman", Times, serif;
+}
+
+header {
+  user-select: none;
 }
