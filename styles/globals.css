@@ -5,34 +5,53 @@
 @tailwind utilities;
 
 @layer base {
+  header {
+    @apply select-none;
+  }
+
   nav ul li:hover {
     @apply bg-gray-200 rounded-full;
+  }
+
+  body main,
+  div > h2 {
+    font-family: "Lato", sans-serif;
+  }
+
+  nav ul li {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  section > p > span:hover {
+    @apply underline cursor-pointer;
   }
 }
 
 @layer components {
+  .container--explore {
+    @apply col-[2_/_span_2] ml-[3.4rem] border-x 
+    border-gray-100 row-span-2 w-full;
+  }
   .card--whoToFollow {
-    @apply border rounded-xl border-gray-200
-    mt-3 ml-[10rem] justify-self-center col-span-2 row-span-2 pr-4;
+    @apply border rounded-xl border-gray-100
+    mt-3 lg:ml-12 pr-4;
   }
   .btn--signUp {
-    @apply border rounded-3xl 
-    border-gray-300 w-[95%] py-1;
+    @apply text-[15px] font-bold border 
+    border-gray-300 w-[95%] py-1.5 rounded-3xl 
+     flex items-center justify-center gap-1;
   }
   .btn--signUp:hover {
     @apply bg-gray-200;
   }
-}
-
-body main,
-div > h2 {
-  font-family: "Lato", sans-serif;
-}
-
-nav ul li {
-  font-family: "Times New Roman", Times, serif;
-}
-
-header {
-  user-select: none;
+  .btn--callToAction--login {
+    @apply border rounded-full border-[rgba(255,255,255,0.4)] text-sm  
+    px-3 pb-1.5 pt-1 font-bold;
+  }
+  .btn--callToAction--signUp {
+    @apply bg-[#EFF3F4] text-black border rounded-full px-4 pb-1.5 pt-1 font-semibold text-sm;
+  }
+  .btn--callToAction--login:hover {
+    @apply bg-lime-950;
+  }
 }

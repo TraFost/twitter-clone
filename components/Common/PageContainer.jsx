@@ -11,7 +11,7 @@ const PageContainer = ({ children, title, meta }) => {
         <meta name="description" content={meta} />
         <link rel="icon" href="/logo-withnobg.png" />
       </Head>
-      <main>{children}</main>
+      <main className={route === "/" && "container--explore"}>{children}</main>
     </>
   );
 };
