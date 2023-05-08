@@ -11,6 +11,7 @@ export default function Home() {
         <h1 className="text-lg font-semibold tracking-wider">Explore</h1>
         <icon.settings className="" />
       </Container>
+      <Container>test</Container>
     </PageContainer>
   );
 }

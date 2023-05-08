@@ -1,17 +1,26 @@
+import Link from "next/link";
 import Container from "../Common/Container";
 
 const Footer = () => {
   return (
-    <footer className="flex ml-3 w-1/2 justify-center text-[0.753rem] text-[#536471]">
-      <ul className="grid grid-cols-4">
-        {/* <li>Terms Of Service</li>
-        <li>Privacy Policy</li>
-        <li className="col-span-2">Cookie Policy</li>
-        <li>Accessibility</li>
-        <li>Ads Info</li>
-        <li>More</li>
-        <li className="">© 2021 Rahman Nurudin.</li> */}
-      </ul>
+    <footer className="mt-3 ml-2 grid place-items-center text-[0.753rem] text-[#536471]">
+      <Container>
+        <ul className="flex gap-3">
+          <li>Terms Of Service</li>
+          <li>Privacy Policy</li>
+          <li className="">Cookie Policy</li>
+        </ul>
+        <ul className="flex gap-3">
+          <li>Accessibility</li>
+          <li>Ads Info</li>
+          <li>
+            <Link href="#">
+              More<span>...</span>
+            </Link>
+          </li>
+          <li>© 2023 X Corp.</li>
+        </ul>
+      </Container>
     </footer>
   );
 };
