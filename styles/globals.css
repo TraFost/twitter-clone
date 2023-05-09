@@ -25,6 +25,10 @@
   section > p > span:hover {
     @apply underline cursor-pointer;
   }
+
+  li {
+    list-style: none;
+  }
 }
 
 @layer components {
