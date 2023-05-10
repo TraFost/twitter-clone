@@ -1,6 +1,19 @@
-import Sidebar from "./Sidebar";
-import WhoToFollow from "./WhoToFollow";
-import Footer from "./Footer";
+import LeftSidebar from "./LeftSidebar";
+import RightSidebar from "./RightSidebar";
 import CallToAction from "./CallToAction";
+import PageContainer from "../Common/PageContainer";
 
-export { Sidebar, WhoToFollow, Footer, CallToAction };
+const Layout = ({ title, meta, children }) => {
+  return (
+    <div className="grid grid-cols-none lg:grid-cols-5 grid-rows-2 h-screen">
+      <LeftSidebar />
+      <PageContainer title={title} meta={meta}>
+        {children}
+      </PageContainer>
+      <RightSidebar />
+      <CallToAction />
+    </div>
+  );
+};
+
+export default Layout;

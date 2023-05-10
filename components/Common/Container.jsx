@@ -1,7 +1,13 @@
 import React from "react";
 
-const Container = ({ children, ...rest }) => {
-  return <div {...rest}>{children}</div>;
+const Container = ({ type, children, ...rest }) => {
+  console.log(rest);
+
+  return type === "section" ? (
+    <section {...rest}>{children}</section>
+  ) : (
+    <div {...rest}>{children}</div>
+  );
 };
 
 export default Container;

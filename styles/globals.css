@@ -10,7 +10,7 @@
   }
 
   nav ul li:hover {
-    @apply bg-gray-200 rounded-full;
+    @apply bg-gray-200 rounded-full cursor-pointer;
   }
 
   body main,
@@ -18,27 +18,29 @@
     font-family: "Lato", sans-serif;
   }
 
-  nav ul li {
+  aside nav ul li {
     font-family: "Times New Roman", Times, serif;
-  }
-
-  section > p > span:hover {
-    @apply underline cursor-pointer;
+    @apply flex items-center gap-[1.2rem] min-w-fit w-[70%] py-2 pl-2;
   }
 
   li {
     list-style: none;
   }
+
+  section > p > span:hover {
+    @apply underline cursor-pointer;
+  }
 }
 
 @layer components {
   .container--explore {
-    @apply col-[2_/_span_2] ml-[3.4rem] border-x 
-    border-gray-100 row-span-2 w-full;
+    @apply lg:col-span-2 justify-self-center
+     lg:justify-self-start mx-auto md:ml-[2.5rem] lg:ml-[3.4rem] border-x 
+    border-gray-100 row-span-2 max-w-[45.5rem] lg:w-full;
   }
   .card--whoToFollow {
     @apply border rounded-xl border-gray-100
-    mt-3 lg:ml-12 pr-4;
+    pr-4 mt-3 ml-16 lg:ml-12;
   }
   .btn--signUp {
     @apply text-[15px] font-bold border 

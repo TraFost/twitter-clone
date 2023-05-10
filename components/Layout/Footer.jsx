@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Container from "../Common/Container";
 
 const Footer = () => {
   return (
     <footer className="mt-3 ml-2 grid place-items-center text-[0.753rem] text-[#536471]">
-      <Container>
+      <div>
         <ul className="flex gap-3">
           <li>Terms Of Service</li>
           <li>Privacy Policy</li>
@@ -20,7 +19,7 @@ const Footer = () => {
           </li>
           <li>© 2023 X Corp.</li>
         </ul>
-      </Container>
+      </div>
     </footer>
   );
 };

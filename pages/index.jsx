@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { icon } from "@/assets/icon";
 import usePicture from "@/hooks/usePicture";
 import pb from "@/lib/pocketbase";
-import PageContainer from "@/components/Common/PageContainer";
-import Container from "@/components/Common/Container";
+
+import Layout from "@/components/Layout";
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -27,28 +26,28 @@ export default function Home() {
   }, []);
 
   return (
-    <PageContainer title="Explore / Twitter Clone" meta="home">
-      <Container className="flex items-center justify-between px-3 pt-3">
+    <Layout title="Explore / Twitter Clone" meta="home">
+      <div className="flex items-center justify-between px-3 pt-3 min-w-fit">
         <h1 className="text-lg font-semibold tracking-wider">Explore</h1>
         <icon.settings />
-      </Container>
-      <Container className="pt-4 px-2.5">
+      </div>
+      <div className="pt-5 px-3">
         {users.map((user) => (
           <section key={user.id}>
             <div className="flex gap-2">
-              <figure className="w-11">
+              <figure className="max-w-[3rem] min-w-fit">
                 <Image
                   loader={() => linkPict} // custom function that solve the image URLs. get the image URL instead of loading it directly from the server.
                   src={linkPict}
                   alt={user.username}
-                  width={48}
+                  width={52}
                   height={0}
-                  className="rounded-full object-cover h-11"
+                  className="rounded-full object-cover min-h-[2.75rem]"
                 />
               </figure>
               {/* posts section */}
               <div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                   <h4 className="text-[15px] font-bold">{user.name}</h4>
                   <div className="flex gap-1 text-[#536471] text-sm">
                     <span>@{user.username}</span>
@@ -60,14 +59,14 @@ export default function Home() {
                   <p className="text-[15px] tracking-wide basis-1/2">
                     test this a tweet, SIUUUU!
                   </p>
-                  <figure className="pt-2 w-full">
+                  <figure className="pt-2 max-w-full min-h-fit">
                     <Image
                       loader={() =>
                         "https://pbs.twimg.com/media/FvrYY08XwAAZxJ5?format=jpg&name=small"
                       }
                       src="https://pbs.twimg.com/media/FvrYY08XwAAZxJ5?format=jpg&name=small"
                       alt={user.username}
-                      width={415}
+                      width={450}
                       height={300}
                       className="rounded-xl"
                     />
@@ -78,7 +77,7 @@ export default function Home() {
             </div>
           </section>
         ))}
-      </Container>
-    </PageContainer>
+      </div>
+    </Layout>
   );
 }

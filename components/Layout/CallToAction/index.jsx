@@ -1,9 +1,8 @@
 import Button from "@/components/Common/Button";
-import Container from "@/components/Common/Container";
 
 const CallToAction = () => {
   return (
-    <Container className="col-span-5 bg-twitter-color">
+    <div className="col-span-5 bg-twitter-color">
       <div className="flex items-center justify-around text-white tracking-wide">
         <div className="pl-28" />
         <div className="pb-3 pt-2.5">
@@ -19,7 +18,7 @@ const CallToAction = () => {
           <Button className="btn--callToAction--signUp">Sign up</Button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
