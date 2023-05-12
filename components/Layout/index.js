@@ -5,7 +5,7 @@ import PageContainer from "../Common/PageContainer";
 
 const Layout = ({ title, meta, children }) => {
   return (
-    <div className="grid grid-cols-none lg:grid-cols-5 grid-rows-2 h-screen">
+    <div className="container--main">
       <LeftSidebar />
       <PageContainer title={title} meta={meta}>
         {children}

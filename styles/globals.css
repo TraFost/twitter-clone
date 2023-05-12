@@ -9,10 +9,6 @@
     @apply select-none;
   }
 
-  nav ul li:hover {
-    @apply bg-gray-200 rounded-full cursor-pointer;
-  }
-
   body main,
   div > h2 {
     font-family: "Lato", sans-serif;
@@ -20,23 +16,37 @@
 
   aside nav ul li {
     font-family: "Times New Roman", Times, serif;
-    @apply flex items-center gap-[1.2rem] min-w-fit w-[70%] py-2 pl-2;
+    @apply flex items-center gap-[1.15rem] min-w-fit py-2 pl-2;
   }
 
   li {
     list-style: none;
   }
 
-  section > p > span:hover {
-    @apply underline cursor-pointer;
+  li > svg {
+    @apply text-2xl lg:text-xl;
+  }
+
+  nav ul li > a {
+    @apply hidden lg:block text-xl;
   }
 }
 
 @layer components {
+  .container--main {
+    @apply grid grid-cols-none lg:grid-cols-5
+     grid-rows-2 h-screen;
+  }
+  .container--leftSidebar {
+    @apply mt-3 pl-7 md:pl-0 md:ml-[3.75rem] lg:ml-[3.1rem] 
+    pr-6 justify-self-center md:justify-self-end 
+    lg:justify-self-start lg:self-start;
+  }
   .container--explore {
-    @apply lg:col-span-2 justify-self-center
-     lg:justify-self-start mx-auto md:ml-[2.5rem] lg:ml-[3.4rem] border-x 
-    border-gray-100 row-span-2 max-w-[45.5rem] lg:w-full;
+    @apply lg:col-span-2 justify-self-start
+     lg:justify-self-start md:ml-[2.5rem] lg:ml-[3.4rem] border-x 
+    border-gray-100 row-span-2 mx-auto min-w-[35rem] max-w-[45.5rem] lg:w-full
+    lg:min-w-0 lg:max-w-none;
   }
   .card--whoToFollow {
     @apply border rounded-xl border-gray-100
@@ -47,16 +57,33 @@
     border-gray-300 w-[95%] py-1.5 rounded-3xl 
      flex items-center justify-center gap-1;
   }
+
+  .btn--callToAction--login {
+    @apply border rounded-full border-[rgba(255,255,255,0.4)] 
+    py-2 flex-grow md:flex-grow-0 md:px-4 md:py-[0.50rem]
+    text-sm font-bold lg:px-[0.82rem] lg:pb-1.5 lg:pt-1 tracking-tight;
+  }
+
+  .btn--callToAction--signUp {
+    @apply bg-[#EFF3F4] text-black border rounded-full 
+    py-2 flex-grow md:flex-grow-0 md:pt-1.5 md:pb-2 md:px-[1.1rem]
+    lg:px-[0.90rem] lg:pt-1 font-bold text-sm;
+  }
+}
+
+@layer utilities {
+  section > p > span:hover {
+    @apply underline cursor-pointer;
+  }
+
+  nav ul li:hover {
+    @apply bg-gray-200 rounded-full cursor-pointer;
+  }
+
   .btn--signUp:hover {
     @apply bg-gray-200;
   }
-  .btn--callToAction--login {
-    @apply border rounded-full border-[rgba(255,255,255,0.4)] text-sm  
-    px-3 pb-1.5 pt-1 font-bold;
-  }
-  .btn--callToAction--signUp {
-    @apply bg-[#EFF3F4] text-black border rounded-full px-4 pb-1.5 pt-1 font-semibold text-sm;
-  }
+
   .btn--callToAction--login:hover {
     @apply bg-lime-950;
   }
