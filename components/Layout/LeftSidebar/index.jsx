@@ -25,7 +25,7 @@ const LeftSidebar = () => {
         <icon.twitter className="text-twitter-color text-[29px]" />
       </div>
       <nav className="pt-5 lg:pt-3.5">
-        <ul className="flex flex-col gap-2 lg:gap-0">
+        <ul className="flex flex-col gap-3 md:gap-2 lg:gap-0">
           <li>
             {width < 1005 ? <icon.search /> : <icon.hashtag />}
             <Link href="#" className="tracking-wide">

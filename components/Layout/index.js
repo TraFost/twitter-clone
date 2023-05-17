@@ -5,14 +5,18 @@ import PageContainer from "../Common/PageContainer";
 
 const Layout = ({ title, meta, children }) => {
   return (
-    <div className="container--main">
-      <LeftSidebar />
-      <PageContainer title={title} meta={meta}>
-        {children}
-      </PageContainer>
-      <RightSidebar />
-      <CallToAction />
-    </div>
+    <>
+      <div className="container--main">
+        <LeftSidebar />
+        <PageContainer title={title} meta={meta}>
+          {children}
+        </PageContainer>
+        <RightSidebar />
+      </div>
+      <div className="h-full sticky bottom-0">
+        <CallToAction />
+      </div>
+    </>
   );
 };
 
