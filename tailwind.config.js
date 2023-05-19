@@ -18,7 +18,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       gridTemplateColumns: {
-        "custom-xs": "",
+        "custom-xs": "10fr 10fr 3fr",
         "custom-sm": "1fr 4fr 2fr",
         "custom-md": "1fr 2fr 3fr 1fr",
       },

@@ -22,22 +22,30 @@ const Tweets = ({ user, linkPict, id }) => {
             />
           </figure>
           {/* posts section */}
-          <div>
-            <div className="flex gap-2">
-              <h4 className="text-[15px] font-bold">{user.name}</h4>
-              <div className="flex gap-1 text-[#536471] text-sm">
-                <span className={width < 388 && "truncate"}>
+          <div className={width < 283 ? "min-w-[2rem]" : undefined}>
+            <div className="flex gap-2 flex-nowrap items-center sm:items-start">
+              <h4
+                className={
+                  width < 281
+                    ? "text-xs font-bold truncate basis-10"
+                    : "text-xs sm:text-[15px] font-bold"
+                }
+              >
+                {user.name}
+              </h4>
+              <div className="flex gap-1 text-[#536471] text-xs sm:text-sm items-end">
+                <span className={width < 281 ? "basis-10 truncate" : undefined}>
                   @{user.username}
                 </span>
                 <span>·</span>
                 <span>4h</span>
               </div>
             </div>
-            <div>
-              <p className="text-[15px] tracking-wide basis-1/2">
+            <div className="min-w-fit">
+              <p className="text-xs sm:text-[15px] tracking-wide">
                 test this a tweet, SIUUUU!
               </p>
-              <figure className="pt-2 max-w-[85%] md:max-w-[95%] lg:max-w-full">
+              <figure className="pt-2 max-w-[70%] sm:max-w-[85%] md:max-w-[95%] lg:max-w-full">
                 <Image
                   src="https://pbs.twimg.com/media/FvrYY08XwAAZxJ5?format=jpg&name=small"
                   width={480}

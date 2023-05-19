@@ -2,7 +2,7 @@ import Button from "@/components/Common/Button";
 
 const CallToAction = () => {
   return (
-    <div className="bg-white sm:bg-twitter-color h-[3.8rem] md:h-full grid md:block z-5">
+    <div className="grid bg-white sm:bg-twitter-color h-[3.8rem] border-t border-gray-200 sm:border-none md:h-full md:block z-5">
       <div className="flex justify-center md:items-center md:justify-between lg:justify-around text-white tracking-wide">
         <div className="hidden md:block lg:pl-28" />
         <div className="hidden md:block lg:hidden" />

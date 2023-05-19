@@ -13,7 +13,7 @@ const Layout = ({ title, meta, children }) => {
         </PageContainer>
         <RightSidebar />
       </div>
-      <div className="h-full sticky bottom-0">
+      <div className="sticky bottom-0">
         <CallToAction />
       </div>
     </>

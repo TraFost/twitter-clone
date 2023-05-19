@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   return (
     <div className="flex justify-between pt-3 px-3.5 items-center">
-      <icon.backArrow />
+      <icon.backArrow className="mr-2" />
       <div className="basis-[90%] px-3 relative">
         <icon.search className="absolute top-1.5 ml-2 text-gray-700" />
         <input
@@ -18,8 +18,7 @@ const SearchBar = () => {
           placeholder="Search Twitter Clone"
         />
       </div>
-
-      <icon.options />
+      <icon.options className="ml-2" />
     </div>
   );
 };
