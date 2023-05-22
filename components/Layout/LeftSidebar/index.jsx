@@ -3,21 +3,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { icon } from "@/assets/icon";
-import pb from "@/lib/pocketbase";
+import useResize from "@/hooks/UseResize";
 
 const LeftSidebar = () => {
   const router = useRouter();
-  const [width, setWidth] = useState(1005); // set the current state of the window width to 1005px, because i want to make if it less than 1005 the svg will change.
-
-  // ** because the window object is not defined in server side rendering, the easy way is to use useEffect hook.
-  // ** when the component is mounted, it will get the current window width, and set it to the state.
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth); // set the current window width to the state
-
-    window.addEventListener("resize", handleWindowResize); // add event listener to the window, and call the handleWindowResize function when the window is resized. its like tracking the current width
-
-    return () => window.removeEventListener("resize", handleWindowResize); // remove the event listener when the component is unmounted, a.k.a clean up function
-  }, []);
+  const [width] = useResize();
 
   return (
     <aside className="container--leftSidebar">

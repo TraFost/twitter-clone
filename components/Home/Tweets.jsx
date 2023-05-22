@@ -4,7 +4,7 @@ import useResize from "@/hooks/UseResize";
 
 import PostsReact from "./PostsReact";
 
-const Tweets = ({ user, linkPict, id }) => {
+const Tweets = ({ user, linkPict }) => {
   const [width] = useResize();
 
   return (
@@ -23,7 +23,7 @@ const Tweets = ({ user, linkPict, id }) => {
           </figure>
           {/* posts section */}
           <div className={width < 283 ? "min-w-[2rem]" : undefined}>
-            <div className="flex gap-2 flex-nowrap items-center sm:items-start">
+            <div className="flex gap-2 flex-nowrap items-end">
               <h4
                 className={
                   width < 281
@@ -33,7 +33,7 @@ const Tweets = ({ user, linkPict, id }) => {
               >
                 {user.name}
               </h4>
-              <div className="flex gap-1 text-[#536471] text-xs sm:text-sm items-end">
+              <div className="flex gap-1 text-[#536471] text-xs sm:text-sm">
                 <span className={width < 281 ? "basis-10 truncate" : undefined}>
                   @{user.username}
                 </span>
@@ -41,8 +41,8 @@ const Tweets = ({ user, linkPict, id }) => {
                 <span>4h</span>
               </div>
             </div>
-            <div className="min-w-fit">
-              <p className="text-xs sm:text-[15px] tracking-wide">
+            <div className="min-w-fit pt-1.5">
+              <p className="text-xs sm:text-[15px] tracking-wide pb-1">
                 test this a tweet, SIUUUU!
               </p>
               <figure className="pt-2 max-w-[70%] sm:max-w-[85%] md:max-w-[95%] lg:max-w-full">

@@ -57,7 +57,13 @@
 
   .container--tweets {
     @apply flex gap-2.5 min-w-fit border-b 
-    border-gray-100 px-3.5 pb-5 first:pt-1 pt-3;
+    border-gray-100 px-3.5 pb-2.5 pt-3 first:pt-1;
+  }
+
+  .container--reactPosts {
+    @apply flex items-center justify-end gap-[0.20rem]
+    min-w-fit text-[#536471] text-sm
+    sm:gap-1.5 hover:cursor-pointer;
   }
 
   .card--whoToFollow {
@@ -93,6 +99,42 @@
   nav ul li:hover {
     @apply bg-gray-200 rounded-full cursor-pointer;
   }
+
+  /* text span */
+  .container--reactPosts:nth-child(1):hover,
+  .container--reactPosts:nth-child(4):hover,
+  .container--reactPosts:nth-child(5):hover {
+    @apply text-[#1DA1F2];
+  }
+
+  .container--reactPosts:nth-child(2):hover {
+    @apply text-green-500;
+  }
+
+  .container--reactPosts:nth-child(3):hover {
+    @apply text-[#E0245E];
+  }
+
+  .container--reactPosts:nth-child(6):hover > span {
+    @apply text-[#794BC4];
+  }
+
+  /* Container icon */
+  .container--reactPosts:nth-child(1):hover > div,
+  .container--reactPosts:nth-child(4):hover > div,
+  .container--reactPosts:nth-child(5):hover > div {
+    @apply text-[#1DA1F2] bg-[#E5F1F6] rounded-[50%];
+  }
+
+  .container--reactPosts:nth-child(2):hover > div {
+    @apply text-green-500 bg-[#E5F6F1] rounded-[50%];
+  }
+
+  .container--reactPosts:nth-child(3):hover > div {
+    @apply text-[#E0245E] bg-[#F6E5E5] rounded-[50%];
+  }
+
+  /* btn */
 
   .btn--signUp:hover {
     @apply bg-gray-200;
